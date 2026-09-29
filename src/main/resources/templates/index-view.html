@@ -190,7 +190,7 @@
 
     <div class="button-area">
 
-        <a th:href="@{/attendance}"
+        <a th:href="@{/index}"
            class="btn btn-add">
             Mark Attendance
         </a>
@@ -357,7 +357,7 @@
 
             <td>
 
-                <a th:href="@{/attendance/delete/{id}(id=${record.attendanceId})}"
+                <a th:href="@{/index/delete/{id}(id=${record.attendanceId})}"
                    class="btn btn-delete"
                    onclick="return confirm('Are you sure you want to delete this attendance record?');">
                     Delete

@@ -20,7 +20,7 @@ import com.example.classroomattendancemarkingsystem.repository.SessionRepository
 import com.example.classroomattendancemarkingsystem.repository.StudentRepository;
 
 @Controller
-@RequestMapping("/attendance")
+@RequestMapping("/index")
 public class AttendanceWebController {
 
     private final AttendanceRecordRepository attendanceRecordRepository;
@@ -52,7 +52,7 @@ public class AttendanceWebController {
         model.addAttribute("students", students);
         model.addAttribute("sessions", sessions);
 
-        return "attendance";
+        return "index";
     }
 
     // =========================================================
@@ -129,7 +129,7 @@ public class AttendanceWebController {
                             + ", Already marked: " + skippedCount
             );
 
-            return "redirect:/attendance/view";
+            return "redirect:/index/view";
 
         } catch (Exception e) {
 
@@ -139,7 +139,7 @@ public class AttendanceWebController {
                             + e.getMessage()
             );
 
-            return "redirect:/attendance";
+            return "redirect:/index/view";
         }
     }
 
@@ -159,7 +159,7 @@ public class AttendanceWebController {
                 attendanceRecords
         );
 
-        return "attendance-view";
+        return "index-view";
     }
 
     // =========================================================
@@ -181,7 +181,7 @@ public class AttendanceWebController {
                         "Attendance record not found: " + id
                 );
 
-                return "redirect:/attendance/view";
+                return "redirect:/index/view";
             }
 
             attendanceRecordRepository.deleteById(id);
@@ -200,6 +200,6 @@ public class AttendanceWebController {
             );
         }
 
-        return "redirect:/attendance/view";
+        return "redirect:/index/view";
     }
 }
